@@ -31,7 +31,14 @@ class PlgSystemZygo_jsreview_captcha extends JPlugin
 			return;
 		}
 
+		if($this->params->get('remove_links')){
 
+			$regex = '/\b(https?):\/\/[-A-Z0-9+&@#\/%?=~_|$!:,.;]*[A-Z0-9+&@#\/%=~_|$]/i';
+			$review->review = preg_replace($regex, ' ', $review->review);
+			$regex = '/\b(www)\.[-A-Z0-9+&@#\/%?=~_|$!:,.;]*[A-Z0-9+&@#\/%=~_|$]/i';
+			$review->review = preg_replace($regex, ' ', $review->review);
+
+		}
 	}
 
 	private function checkUser()

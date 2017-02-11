@@ -76,6 +76,13 @@
  			<fieldset name="advanced" >
 
 
+				<field name="remove_links" type="list" default="0"
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_REMOVE_LINKS" 
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>		
+
 				<field name="jpeg_quality" type="int" default="90"
 					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_JPEG_QUALITY" 
 				/>		
