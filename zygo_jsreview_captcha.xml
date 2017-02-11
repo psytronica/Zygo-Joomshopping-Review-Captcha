@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA</name>
+	<author>Sherza</author>
+	<creationDate>10 feb 2017</creationDate>
+	<copyright>Copyright (C) 2017 Psytronica.ru. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>irina@psytronica.ru</authorEmail>
+	<authorUrl>www.psytronica.ru</authorUrl>
+	<version>3.0.0</version>
+	<description>PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="zygo_jsreview_captcha">zygo_jsreview_captcha.php</filename>
+		<filename>zygo_jsreview_captcha.xml</filename>
+		<filename>index.html</filename>
+		<folder>kcaptcha</folder>			
+	</files>
+	<languages>
+		<language tag="ru-RU">languages/ru-RU/ru-RU.plg_system_zygo_jsreview_captcha.ini</language>
+		<language tag="ru-RU">languages/ru-RU/ru-RU.plg_system_zygo_jsreview_captcha.sys.ini</language>
+	</languages>	
+	<config>
+		<fields name="params">
+ 			<fieldset name="basic" >
+
+				<field type="spacer" filter="raw" name="tagspacer" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_TAG_DESC" />
+
+				<field name="tag" default=""
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_TAG" 
+				/>
+
+				<field name="width" type="int" default="160"
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_WIDTH" 
+				/>
+				<field name="height" type="int" default="80"
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_HEIGHT" 
+				/>				
+
+				<field name="min_length" type="int" default="5"
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_MIN_LENGTH" 
+				/>			
+
+				<field name="max_length" type="int" default="7"
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_MAX_LENGTH" 
+				/>			
+
+				<field name="white_noise_density" type="int" default="6"
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_WHITE_NOISE_DENSITY" 
+				/>			
+
+				<field name="black_noise_density" type="int" default="30"
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_BLACK_NOISE_DENSITY" 
+				/>			
+
+
+				<field name="access" type="usergroup"
+					label="JACTION_ZYGO_HIDE_CAPTCHA_TITLE"
+					default="8"
+					 multiple="true" />
+
+				<field type="spacer" class="label label-warning" name="credits_separator" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_SPACER_CREDITS" />
+
+				<field name="show_credits" type="list" default="1"
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_SHOW_CREDITS" 
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>	
+				<field name="credits" type="int" default="www.captcha.ru"
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_CREDITS" 
+				/>	
+
+				<field type="spacer" filter="raw" name="infospacer" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_INFO" />
+
+			</fieldset>
+ 			<fieldset name="advanced" >
+
+
+				<field name="jpeg_quality" type="int" default="90"
+					label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_JPEG_QUALITY" 
+				/>		
+
+				<field type="spacer" class="label label-warning" name="foreground_colors" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_FOREGROUND_COLORS" />
+
+
+
+				<field name="red_foreground_begin" type="integer" default="0" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_RED_FOREGROUND_BEGIN" first="0" last="255" step="1" />
+
+				<field name="red_foreground_end" type="integer" default="80" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_RED_FOREGROUND_END" first="0" last="255" step="1" />
+
+				<field name="green_foreground_begin" type="integer" default="0" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_GREEN_FOREGROUND_BEGIN" first="0" last="255" step="1" />
+
+				<field name="green_foreground_end" type="integer" default="80" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_GREEN_FOREGROUND_END" first="0" last="255" step="1" />
+
+				<field name="blue_foreground_begin" type="integer" default="0" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_BLUE_FOREGROUND_BEGIN" first="0" last="255" step="1" />
+
+				<field name="blue_foreground_end" type="integer" default="80" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_BLUE_FOREGROUND_END" first="0" last="255" step="1" />
+
+				<field type="spacer" class="label label-warning" name="background_colors" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_BACKGROUND_COLORS" />
+
+
+				<field name="red_background_begin" type="integer" default="220" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_RED_BACKGROUND_BEGIN" first="0" last="255" step="1" />
+
+				<field name="red_background_end" type="integer" default="255" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_RED_BACKGROUND_END" first="0" last="255" step="1" />
+
+				<field name="green_background_begin" type="integer" default="220" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_GREEN_BACKGROUND_BEGIN" first="0" last="255" step="1" />
+
+				<field name="green_background_end" type="integer" default="255" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_GREEN_BACKGROUND_END" first="0" last="255" step="1" />
+
+				<field name="blue_background_begin" type="integer" default="220" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_BLUE_BACKGROUND_BEGIN" first="0" last="255" step="1" />
+
+				<field name="blue_background_end" type="integer" default="255" label="PLG_SYSTEM_ZYGO_JSREVIEW_CAPTCHA_BLUE_BACKGROUND_END" first="0" last="255" step="1" />
+
+			</fieldset>
+			<fieldset name="html_css_fieldset" label="PLG_SYSTEM_ZYGO_JSREVIEW_HTML_CSS_FIELDSET_LABEL">
+				<field type="spacer" filter="raw" name="cssspacer" label="PLG_SYSTEM_ZYGO_JSREVIEW_CSS_DESCRIPTION" />
+
+				<field name="css" type="textarea" class="span10" label="PLG_SYSTEM_ZYGO_JSREVIEW_FIELD_CSS_LABEL"  rows="10" cols="180" filter="raw" default=".zygo_captcha_refresh{cursor:pointer;}.zygo_captcha-input{margin-top:10px;}" />
+
+
+				<field type="spacer" filter="raw" name="htmlspacer" label="PLG_SYSTEM_ZYGO_JSREVIEW_HTML_DESCRIPTION" />
+
+				<field name="html" type="textarea" label="PLG_CONTENT_ZYGO_PROFILE_FIELD_HTML_LABEL" class="span10"  rows="30" cols="40" filter="raw" default='&lt;div class="span3"&gt;%CAPTCHA_LABEL%&lt;/div&gt;
+					&lt;div class="span9"&gt;
+
+						&lt;div id="zygo_captcha_wrapper"&gt;
+							&lt;div&gt;%CAPTCHA_IMG%&lt;/div&gt;
+
+							&lt;div class="zygo_captcha-input input-append"&gt;
+							&lt;input type="text" class="inputbox input-small" %CAPTCHA_INPUT_NAME%&gt;
+
+							&lt;a class="btn zygo_captcha_refresh" %CAPTCHA_REFRESH%&gt;
+							&lt;i class="icon-refresh"&gt;&lt;/i&gt;%CAPTCHA_REFRESH_LABEL%&lt;/a&gt;
+							&lt;/div&gt;
+
+						&lt;/div&gt;
+					&lt;/div&gt;' />
+
+			</fieldset>
+
+
+		</fields>
+	</config>	
+</extension>
