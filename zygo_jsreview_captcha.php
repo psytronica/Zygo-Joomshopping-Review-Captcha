@@ -4,7 +4,7 @@
  * @subpackage  System.zygo_jsreview_captcha
  *
  * @copyright   Copyright (C) 2015 Sherza, http://www.psytronica.ru, 
- * @author		Sherza, irina@psytronica.ru 
+ * @author		Sherza, sherza.web@gmail.com 
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
